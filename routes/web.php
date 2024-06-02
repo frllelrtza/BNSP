@@ -18,5 +18,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('modernize.index');
+    return view('dashboard.index');
+});
+
+Route::get('/pendapatan', function () {
+    return view('dashboard.pendapatan.index');
+});
+
+Route::get('/pengeluaran', function () {
+    return view('dashboard.pengeluaran.index');
+});
+
+Route::get('/produk', function () {
+    return view('dashboard.produk.index');
 });
