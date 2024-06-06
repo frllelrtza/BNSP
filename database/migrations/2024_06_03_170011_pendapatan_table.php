@@ -9,19 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('Pendapatan', function (Blueprint $table) {
+        Schema::create('pendapatan', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal_pendapatan');
             $table->string('sumber_pendapatan');
-            $table->text('deskripsi_pendapatan'); 
-            $table->decimal('jumlah_pendapatan', 15, 2); 
-            $table->string('created_by');
-            $table->string('updated_by')->nullable();
+            $table->text('deskripsi_pendapatan');
+            $table->decimal('jumlah_pendapatan', 15, 2);
+            $table->unsignedBigInteger('created_by')->default(1); // setting a default value, e.g., 1 for the admin
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

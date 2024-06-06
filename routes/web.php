@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PendapatanController;
+use App\Http\Controllers\PengeluaranController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,22 +31,14 @@ Route::post('proses_register',[AuthController::class,'proses_register'])->name('
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['cek_login:admin']], function () {
         Route::resource('admin', AdminController::class);
+        Route::resource('/dashboard', AdminController::class);
+        Route::resource('/pendapatan', PendapatanController::class);
+        Route::resource('/pengeluaran', PengeluaranController::class);
+        Route::resource('/produk',ProdukController::class);
     });
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
 
-Route::get('/pendapatan', function () {
-    return view('dashboard.pendapatan.index');
-});
 
-Route::get('/pengeluaran', function () {
-    return view('dashboard.pengeluaran.index');
-});
 
-Route::get('/produk', function () {
-    return view('dashboard.produk.index');
-});

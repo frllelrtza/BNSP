@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('sumber_pengeluaran');
             $table->text('deskripsi_pengeluaran'); 
             $table->decimal('jumlah_pengeluaran', 15, 2); 
-            $table->string('created_by');
-            $table->string('updated_by')->nullable();
+            $table->unsignedBigInteger('created_by')->default(1);
             $table->timestamps();
         });
     }

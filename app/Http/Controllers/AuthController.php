@@ -55,7 +55,7 @@ class AuthController extends Controller
 
 // jika ga ada data user yang valid maka kembalikan lagi ke halaman login
 // pastikan kirim pesan error juga kalau login gagal ya
-        return redirect('auth.index')
+        return redirect('/login')
             ->withInput()
             ->withErrors(['login_gagal'=>'These credentials does not match our records']);
 
