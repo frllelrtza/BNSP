@@ -53,8 +53,8 @@
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#features">Tentang Kami</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Produk</a></li>
-          <li><a class="nav-link scrollto" href="#footer">Kontak Kami</a></li>
           <li><a class="nav-link scrollto" href="#faq">Pertanyaan</a></li>
+          <li><a class="nav-link scrollto" href="#footer">Kontak Kami</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a> -->
             <!-- <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -316,72 +316,28 @@
         <div class="container mt-3">
   <div class="row">
     <!-- Card 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-70 p-5">
-        <img src="assets/landing/img/produk/pempek campur.jpg" class="card-img-top" alt="Image 1">
-        <div class="card-body">
-          <h5 class="card-title m-3">Pempek Campur</h5>
-          <p class="card-text m-1">10 Adaan, 6 Lenjer, 4 Telor.</p>
-          <p class="card-text m-0"><strong>Harga:</strong> Rp. 55.000.</p>
-        </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="container mt-5">
+          <div class="row">
+              @foreach ($produk as $produk)
+              <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow-sm rounded-3">
+                      <img src="{{ asset('storage/produk/' . $produk->photo_produk) }}" class="card-img-top img-fluid rounded" alt="{{ $produk->nama_produk }}" style="height: 300px; object-fit: cover;">
+                      <div class="card-body d-flex flex-column">
+                          <h5 class="card-title font-weight-bold" style="color: #ffbb5c;">{{ $produk->nama_produk }}</h5>
+                          <p class="card-text flex-grow-1"  style="color: #c63d2f;">{{ $produk->deskripsi_produk }}</p>
+                          <p class="card-text text-success"><strong>Harga:</strong> Rp. {{ number_format($produk->harga, 0, ',', '.') }}</p>
+                          <a href="https://wa.me/6281367240036" class="btn btn-success mt-2">Pesan Sekarang</a>
+                      </div>
+                  </div>
+              </div>
+              @endforeach
+          </div>
       </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="col-md-4 mb-4">
-      <div class="card h-70 p-5">
-        <img src="assets/landing/img/produk/pempek adaan.jpg" class="card-img-top" alt="Image 2">
-        <div class="card-body ">
-          <h5 class="card-title m-3 ">Pempek Adaan</h5>
-          <p class="card-text m-1 ">20 Pempek Adaan.</p>
-          <p class="card-text m-0 "><strong>Harga:</strong> Rp. 55.000.</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-md-4 mb-4">
-      <div class="card h-70 p-5">
-        <img src="assets/landing/img/produk/pempek campur dan kulit.jpg" class="card-img-top" alt="Image 3">
-        <div class="card-body">
-          <h5 class="card-title m-3">Pempek Campur Kulit</h5>
-          <p class="card-text m-1">5 Adaan, 5 Kulit, 5 Lenjer, 5 Telor</p>
-          <p class="card-text m-0"><strong>Harga:</strong> Rp. 55.000.</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-md-4 mb-4">
-      <div class="card h-70 p-5">
-        <img src="assets/landing/img/produk/pempek kulit.jpg" class="card-img-top" alt="Image 4">
-        <div class="card-body">
-          <h5 class="card-title m-3">Pempek Kulit</h5>
-          <p class="card-text m-1">5 Pempek Kulit.</p>
-          <p class="card-text m-0"><strong>Harga:</strong> Rp. 14.000/Kelipatan 5.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card h-70 p-5">
-        <img src="assets/landing/img/produk/pempek lenjer.jpg" class="card-img-top" alt="Image 5">
-        <div class="card-body">
-          <h5 class="card-title m-3">Pempek Lenjer</h5>
-          <p class="card-text m-1">5 Pempek Lenjer.</p>
-          <p class="card-text m-0"><strong>Harga:</strong> Rp. 14.000/Kelipatan 5.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card h-70 p-5">
-        <img src="assets/landing/img/produk/pempek telor.jpg" class="card-img-top" alt="Image 6">
-        <div class="card-body">
-          <h5 class="card-title m-3">Pempek Telor</h5>
-          <p class="card-text m-1">5 Pempek Telor.</p>
-          <p class="card-text m-0"><strong>Harga:</strong> Rp. 14.000/Kelipatan 5.</p>
-        </div>
-      </div>
-    </div>
 
   </div>
 </div>
@@ -682,7 +638,7 @@
               Perumahan Taman Gunter II Blok A No.24<br>
               Kemiling, Bandar Lampung<br>
               Lampung, Indonesia<br><br>
-              <strong>Phone:</strong><a href="https://wa.me/6281367240036">+6281367240036</a> <br>
+              <strong>Phone:</strong> <a href="https://wa.me/6281367240036">+6281367240036</a> <br>
             </p>
           </div>
 
@@ -697,7 +653,7 @@
             <div class="social-links mt-3">
               <a href="#" class="tiktok"><i class="bx bxl-tiktok"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/ellysuarni27" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/pempek.elly/" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="https://wa.me/6281367240036" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
               
             </div>

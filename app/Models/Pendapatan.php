@@ -17,4 +17,5 @@ class Pendapatan extends Model
         'jumlah_pendapatan',
         
     ];
+
 }
