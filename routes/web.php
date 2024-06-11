@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PendapatanController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,8 @@ use App\Http\Controllers\ProdukController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', LandingController::class);
+
 
 Route::get('login', [AuthController::class,'index'])->name('login');
 Route::post('proses_login', [AuthController::class,'proses_login'])->name('proses_login');
@@ -35,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('/pendapatan', PendapatanController::class);
         Route::resource('/pengeluaran', PengeluaranController::class);
         Route::resource('/produk',ProdukController::class);
+        Route::resource('/profil',SettingController::class);
     });
 });
 
