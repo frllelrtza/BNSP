@@ -20,7 +20,7 @@ class AkunSeeder extends Seeder
                 'name'=>'AkunAdmin',
                 'email'=>'admin@gmail.com',
                 'level'=>'admin',
-                'password'=>Hash::make('123456')
+                'password'=>Hash::make('12345')
             ]
         ];
         foreach ($user as $key => $value) {
