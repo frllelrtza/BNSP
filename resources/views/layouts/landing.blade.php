@@ -90,12 +90,12 @@
           <div>
             <h1>Pempek Elly</h1>
             <h2>Aneka Olahan Ikan</h2>
-            <a href="#gallery" class="btn btn-warning m-3 p-4"><i class="bx bxl-play-store"></i> Lihat Menu</a>
+            <a href="#gallery" class="btn btn-warning m-3 p-4" style="color: white;" ><i class='bx bx-shopping-bag'></i> Lihat Menu</a>
             <a href="https://wa.me/6281367240036" class="btn btn-success m-3 p-4"><i class="bx bxl-whatsapp"></i> Pesan Disini</a>
           </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
-          <img src="assets/landing/img/gallery/home.png" class="img-fluid" alt="">
+          <img src="assets/landing/img/gallery/home.png" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
